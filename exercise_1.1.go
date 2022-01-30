@@ -3,14 +3,11 @@ package main
 import (
 	"fmt"
 	"os"
+	"strings"
 )
 
 func main() {
-	var s, sep string
-	fmt.Println(len(os.Args))
-	for i := 1; i < len(os.Args); i++ {
-		s += sep + os.Args[i]
-		sep = " "
-	}
-	fmt.Println(s)
+	fmt.Println(strings.Join(os.Args[1:], " "))
+	// Modify the echo program to also print os.Args[0], the name of the command that invoked it.
+	fmt.Println(strings.Join(os.Args[:], " "))
 }
